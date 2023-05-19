@@ -33,10 +33,11 @@ public class TerceroActivityMoscoso extends AppCompatActivity {
         numeroDividendo = findViewById(R.id.editTextNumberDividendo3);
         numero = findViewById(R.id.editTextNumberNumero3);
         cerrarButton = findViewById(R.id.button_cerrar3);
+
     }
 
     public void onClick_cerrarButton(View view){
-        Intent intent = new Intent(this, PrimeroActivityMoscoso.class);
+        Intent intent = new Intent(this, SegundoActivityMoscoso.class);
         intent.putExtra("textoNombre",textoNombre.getText().toString());
         intent.putExtra("textoApellido",textoApellido.getText().toString());
         intent.putExtra("numeroDivisor",numeroDivisor.getText().toString());

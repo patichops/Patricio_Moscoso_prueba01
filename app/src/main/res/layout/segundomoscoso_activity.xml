@@ -41,8 +41,9 @@
         android:id="@+id/button_siguienteLay2"
         android:layout_width="192dp"
         android:layout_height="42dp"
-        android:layout_marginStart="104dp"
+        android:layout_marginStart="108dp"
         android:layout_marginBottom="132dp"
+        android:onClick="onClick_siguienteButton"
         android:text="Siguiente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -53,6 +54,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="108dp"
         android:layout_marginBottom="68dp"
+        android:onClick="onClick_cerrarButton"
         android:text="Cerrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -61,19 +63,23 @@
         android:id="@+id/editTextNombre2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="56dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="43dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextApellidos2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="124dp"
         android:ems="10"
         android:inputType="text"
         android:text="LastName"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="103dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

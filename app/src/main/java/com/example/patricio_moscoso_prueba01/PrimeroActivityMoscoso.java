@@ -33,15 +33,15 @@ public class PrimeroActivityMoscoso extends AppCompatActivity {
         numeroDos = findViewById(R.id.dividendotextView);
         numeroUno = findViewById(R.id.divisortextView);
         siguienteButton = findViewById(R.id.button_siguiente);
+        siguienteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClick_ButtonSiguiente(view);
+            }
+        });
 
         Bundle bundle = this.getIntent().getExtras();
-        if (bundle != null){
-            Toast.makeText(this, "No existen datos", Toast.LENGTH_SHORT);
-
-
-            if (true)
-                mostrarResultadosButton.setClickable(false);
-        }
+        mostrarResultadosButton.setClickable(false);
 
         mostrarResultadosButton = findViewById(R.id.button_mostrarResultados);
 

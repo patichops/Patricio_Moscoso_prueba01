@@ -29,6 +29,7 @@ public class SegundoActivityMoscoso extends AppCompatActivity {
         setContentView(R.layout.segundomoscoso_activity);
 
 
+
         layout2 = findViewById(R.id.layout2);
         textoNombre = findViewById(R.id.editTextNombre2);
         textoApellido = findViewById(R.id.editTextApellidos2);
@@ -37,6 +38,19 @@ public class SegundoActivityMoscoso extends AppCompatActivity {
         numero = findViewById(R.id.textViewNumero2);
         siguienteButton = findViewById(R.id.button_siguienteLay2);
         cerrarButton = findViewById(R.id.button_cerrar2);
+
+        Bundle bundle = this.getIntent().getExtras();
+
+        //if (this.getIntent().getType() == SegundoActivityMoscoso.class)
+
+            if (bundle != null){
+                textoNombre.setText(bundle.getString("textoNombre"));
+                textoApellido.setText(bundle.getString("textoApellido"));
+                numeroDividendo.setText(bundle.getString("numeroDivisor"));
+                numeroDivisor.setText(bundle.getString("numeroDividendo"));
+                numero.setText(bundle.getString("numero"));
+            }
+
 
         cerrarButton.setClickable(false);
 
@@ -48,5 +62,17 @@ public class SegundoActivityMoscoso extends AppCompatActivity {
         intent.putExtra("textApellido",textoApellido.getText().toString());
 
         startActivity(intent);
+    }
+
+    public void onClick_cerrarButton(View view){
+        Intent intent = new Intent(this, PrimeroActivityMoscoso.class);
+        intent.putExtra("textoNombre",textoNombre.getText().toString());
+        intent.putExtra("textoApellido",textoApellido.getText().toString());
+        intent.putExtra("numeroDivisor",numeroDivisor.getText().toString());
+        intent.putExtra("numeroDividendo",numeroDividendo.getText().toString());
+        intent.putExtra("numero",numero.getText().toString());
+
+        startActivity(intent);
+        finish();
     }
 }
