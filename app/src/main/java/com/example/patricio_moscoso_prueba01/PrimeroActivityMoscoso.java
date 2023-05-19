@@ -35,15 +35,15 @@ public class PrimeroActivityMoscoso extends AppCompatActivity {
         siguienteButton = findViewById(R.id.button_siguiente);
 
         Bundle bundle = this.getIntent().getExtras();
-        if (bundle == null){
+        if (bundle != null){
             Toast.makeText(this, "No existen datos", Toast.LENGTH_SHORT);
+
+
+            if (true)
+                mostrarResultadosButton.setClickable(false);
         }
-        
+
         mostrarResultadosButton = findViewById(R.id.button_mostrarResultados);
-
-        if (false)
-            mostrarResultadosButton.setClickable(false);
-
 
     }
 
