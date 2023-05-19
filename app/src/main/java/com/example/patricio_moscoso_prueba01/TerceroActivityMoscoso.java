@@ -34,6 +34,11 @@ public class TerceroActivityMoscoso extends AppCompatActivity {
         numero = findViewById(R.id.editTextNumberNumero3);
         cerrarButton = findViewById(R.id.button_cerrar3);
 
+        Bundle bundle = this.getIntent().getExtras();
+        if (bundle != null){
+            textoNombre.setText(bundle.getString("textNombre"));
+            textoApellido.setText(bundle.getString("textApellido"));
+        }
     }
 
     public void onClick_cerrarButton(View view){
@@ -45,6 +50,7 @@ public class TerceroActivityMoscoso extends AppCompatActivity {
         intent.putExtra("numero",numero.getText().toString());
 
         startActivity(intent);
-        finish();
     }
+
+
 }

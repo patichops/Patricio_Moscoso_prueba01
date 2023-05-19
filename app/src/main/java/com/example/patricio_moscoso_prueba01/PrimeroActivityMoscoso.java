@@ -18,6 +18,7 @@ public class PrimeroActivityMoscoso extends AppCompatActivity {
 
     private TextView numeroUno;
     private TextView numeroDos;
+    private TextView invertido;
 
     private Button siguienteButton;
     private Button mostrarResultadosButton;
@@ -32,7 +33,10 @@ public class PrimeroActivityMoscoso extends AppCompatActivity {
         textoApellido = findViewById(R.id.apellidotextView);
         numeroDos = findViewById(R.id.dividendotextView);
         numeroUno = findViewById(R.id.divisortextView);
+        invertido = findViewById(R.id.invertidotextView);
         siguienteButton = findViewById(R.id.button_siguiente);
+        mostrarResultadosButton = findViewById(R.id.button_mostrarResultados);
+
         siguienteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,9 +45,19 @@ public class PrimeroActivityMoscoso extends AppCompatActivity {
         });
 
         Bundle bundle = this.getIntent().getExtras();
-        mostrarResultadosButton.setClickable(false);
 
-        mostrarResultadosButton = findViewById(R.id.button_mostrarResultados);
+        if (bundle != null){
+            textoNombre.setText(bundle.getString("textoNombre"));
+            textoApellido.setText(bundle.getString("textoApellido"));
+            numeroUno.setText(bundle.getString("numeroDivisor"));
+            numeroDos.setText(bundle.getString("numeroDividendo"));
+            invertido.setText(bundle.getString("numero"));
+        } else {
+            mostrarResultadosButton.setClickable(false);
+        }
+
+
+
 
     }
 
@@ -51,5 +65,9 @@ public class PrimeroActivityMoscoso extends AppCompatActivity {
         Intent intent = new Intent(this, SegundoActivityMoscoso.class);
 
         startActivity(intent);
+    }
+
+    public void mostrarResultados(){
+        //mostrar resultado mediante Toast
     }
 }

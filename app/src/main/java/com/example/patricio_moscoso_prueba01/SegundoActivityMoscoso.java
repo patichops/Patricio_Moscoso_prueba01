@@ -49,11 +49,9 @@ public class SegundoActivityMoscoso extends AppCompatActivity {
                 numeroDividendo.setText(bundle.getString("numeroDivisor"));
                 numeroDivisor.setText(bundle.getString("numeroDividendo"));
                 numero.setText(bundle.getString("numero"));
+            } else {
+                cerrarButton.setClickable(false);
             }
-
-
-        cerrarButton.setClickable(false);
-
     }
 
     public void onClick_siguienteButton(View view){
